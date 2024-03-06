@@ -1,0 +1,74 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="shortcut icon" href="{% static 'assets/logo/logo-white.png' %}" type="image/x-icon">
+    <link href="{% static 'bootstrap/css/bootstrap.css' %}" rel="stylesheet" type="text/css" />
+    <link href="{% static 'bootstrap/css/bootstrap.min.css' %}" rel="stylesheet" type="text/css" />
+    <link href="{% static 'bootstrap/css/bootstrap.rtl.css' %}" rel="stylesheet" type="text/css" />
+    <link href="{% static 'bootstrap/css/bootstrap.css.map' %}" rel="stylesheet" type="text/css" />
+    <link href="{% static 'bootstrap/css/bootstrap-reboot.css' %}" rel="stylesheet" type="text/css" />
+    <link href="{% static 'css/custom.css' %}" rel="stylesheet" />
+</head>
+<body>
+   <div class="col-12" id="container">
+    <center>
+        <form class="row g-3" method="post" enctype="multipart/form-data">
+            <div class="container col-md-6">
+                <div class="col-md-6" id="info"><br>
+                    <label for="validationDefault01" class="form-label">Nom && Prénom</label>
+                    <input type="text" class="form-control" id="validationDefault01" required>
+                  </div>
+                  <div class="col-md-6" id="info">
+                    <label for="validationDefault02" class="form-label">Mail</label>
+                    <input type="mail" class="form-control" id="validationDefault02" required>
+                  </div>
+                  <div class="col-md-6" id="info">
+                    <label for="validationDefaultUsername" class="form-label">Username</label>
+                    <div class="input-group">
+                      <span class="input-group-text" id="inputGroupPrepend2">@</span>
+                      <input type="text" class="form-control" id="validationDefaultUsername" aria-describedby="inputGroupPrepend2" required>
+                    </div>
+                  </div>
+                  <div class="col-md-6" id="info">
+                    <label for="validationDefault03" class="form-label">City</label>
+                    <input type="text" class="form-control" id="validationDefault03" required>
+                  </div>
+    
+                  <div class="col-md-6" id="info">
+                    <label for="validationDefault04" class="form-label">State</label>
+                    <select class="form-select" id="validationDefault04" required>
+                      <option selected disabled value="">Choose...</option>
+                      <option>...</option>
+                    </select>
+                  </div>
+                  <div class="col-md-6" id="info">
+                    <label for="validationDefault05" class="form-label">Zip</label>
+                    <input type="text" class="form-control" id="validationDefault05" required>
+                  </div>
+                  <div class="col-md-6" id="info">
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="" id="invalidCheck2" required>
+                      <label class="form-check-label" for="invalidCheck2">
+                        Acceptez les termes et contrats
+                      </label>
+                    </div>
+                  </div>
+                  <div class="col-md-6" id="info">
+                    <button class="btn btn-primary" type="submit">S'inscrire</button>
+                  </div>
+            </div>
+          </form>
+    </center>
+   </div>
+    <script src="{% static 'bootstrap/js/bootstrap.js' %}"></script>
+    <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'bootstrap/js/bootstrap.bundle.js' %}"></script>
+    <script src="{% static 'bootstrap/js/bootstrap.esm.js' %}"></script>
+    <script src="{% static 'js/custom.js' %}"></script>
+      
+</body>
+</html>

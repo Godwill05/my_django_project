@@ -1,0 +1,83 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'globals.css' %}">
+    <link rel="stylesheet" href="{% static 'mangalib/css/main.css' %}">
+    
+</head>
+<body>
+   
+    <div class="container">
+        <div class="fir">
+            <p>
+                <h1>Bienvenue sur mangalib</h1>
+
+            </p>
+            <p>
+                {{message}}
+            </p>
+
+            <form method="post">
+                {% csrf_token %}
+
+                {{ form.as_p }}
+                <input type="submit" value="Send">
+            </form>
+            <p>
+                <a href="#">xxx</a>
+            </p>
+        </div>
+        {% lorem 2 p %} 
+        <!--{% debug %} -->
+        {% now "d/m/y H:i:s" %}
+        <h2>
+            contenu d'un autre fichier
+        </h2>
+        {% include  "./other.html" %}
+        
+        {% if newscontent >= 1 %}
+            <p>Il a {{ newscontent }} new{{ newscontent | pluralize }} {{ var }}disponible</p>
+        {% else %}
+        <p>Pas de news Dispo</p>
+        {% endif %} 
+
+        <p>
+            {% for u in users %}
+            <li>
+                {{ u }}
+            </li>
+            {% endfor %}
+        </p>
+        <p>
+            {{ users | random    }}
+        </p>
+        <table>
+            <tr>
+                <th>Nom</th>
+                <th>Auteur</th>
+                <th>Qté</th>
+                <th colspan="2">Actions</th>
+            </tr>
+            {% for book in books %}
+            <tr>
+                
+                    <td><a href="{% url 'mangalib:show' book.id %}">{{ book.title }}</a></td>
+                    
+                    <td>{{ book.author }}</td>
+                    <td>{{ book.quantity }}</td>
+                    <td><a href="">edit</a></td>
+                    <td><a href="">Del</a></td>
+                
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+    <p>
+        <a href="{% url 'mangalib:add' %}">[+]</a>
+    </p>
+</body>
+</html>
